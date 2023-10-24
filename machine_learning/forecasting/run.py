@@ -10,12 +10,12 @@ missing (the amount of data that u expected are not supposed to be)
          for the next 3 months sales or something,
          u can just adjust it for ur own purpose
 """
-
-from warnings import simplefilter
+  
+from warnings import simplefilter# used to filter out the warning messages that might be generated during the code execution.
 
 import numpy as np
 import pandas as pd
-from sklearn.preprocessing import Normalizer
+from sklearn.preprocessing import Normalizer#class from scikit-learn library , used for normalizing data. Normalization is a common preprocessing step in machine learning to scale data to a standard range.
 from sklearn.svm import SVR
 from statsmodels.tsa.statespace.sarimax import SARIMAX
 
@@ -157,6 +157,7 @@ if __name__ == "__main__":
         sarimax_predictor(train_user, train_match, test_match),
         support_vector_regressor(x_train, x_test, train_user),
     ]
+    
 
     # check the safety of today's data
     not_str = "" if data_safety_checker(res_vote, test_user[0]) else "not "
